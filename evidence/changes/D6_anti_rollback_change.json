@@ -1,0 +1,11 @@
+{
+  "change_id": "D6_anti_rollback_change",
+  "description": "Anti-rollback configuration/version counter change",
+  "baseline_from": "<Bi>",
+  "baseline_to": "<Bj>",
+  "changed_assets": [
+    {
+      "path": "platform/anti_rollback/anti_rollback_config.json"
+    }
+  ]
+}

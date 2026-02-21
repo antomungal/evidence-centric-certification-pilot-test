@@ -1,0 +1,66 @@
+digraph TraceabilitySchema {
+  rankdir=LR;
+  graph [fontsize=18 fontname="Helvetica" labelloc=t label="Evidence-centric certification traceability schema (pilot)" splines=true];
+  node  [fontsize=11 fontname="Helvetica" style="rounded,filled" fillcolor=white color="#444444"];
+  edge  [fontsize=10 fontname="Helvetica" color="#444444"];
+
+  // Layers
+  subgraph cluster_norm {
+    label="Normative layer";
+    color="#bbbbbb";
+    style="rounded";
+    R [label="Requirement\n(R_i)" shape=box];
+    C [label="Control / Objective\n(C_j)" shape=box];
+    R -> C [label="refines / maps-to" arrowhead=vee];
+  }
+
+  subgraph cluster_impl {
+    label="Implementation layer";
+    color="#bbbbbb";
+    style="rounded";
+    Comp [label="Component\n(device FW, bootloader, OTA, broker, backend)" shape=component];
+    C -> Comp [label="implemented-by" arrowhead=vee];
+  }
+
+  subgraph cluster_evid {
+    label="Evidence layer";
+    color="#bbbbbb";
+    style="rounded";
+    A [label="Evidence artefact\n(A_k)\n(e.g., signed image, SBOM, scan, config snapshot)" shape=note];
+    TR [label="Tool run\n(Tool ID, version, params)" shape=parallelogram];
+    Obs [label="Operational observation\n(telemetry/log summary)" shape=cds];
+    Comp -> A [label="produces / described-by" arrowhead=vee];
+    TR -> A [label="generated" arrowhead=vee];
+    Obs -> A [label="materialised-as" arrowhead=vee];
+  }
+
+  subgraph cluster_assess {
+    label="Assessment layer";
+    color="#bbbbbb";
+    style="rounded";
+    T [label="Test / Check\n(T_m)" shape=oval];
+    Res [label="Result\n(pass/fail, metrics)" shape=diamond];
+    A -> T [label="input-to" arrowhead=vee];
+    T -> Res [label="yields" arrowhead=vee];
+    Res -> C [label="supports" arrowhead=vee];
+  }
+
+  subgraph cluster_evol {
+    label="Evolution layer";
+    color="#bbbbbb";
+    style="rounded";
+    B [label="Evidence baseline\n(B_t)\n(versioned snapshot)" shape=folder];
+    Ch [label="Change event\n(\u0394)" shape=hexagon];
+    A -> B [label="belongs-to" arrowhead=vee];
+    Res -> B [label="recorded-in" arrowhead=vee];
+    Ch -> Comp [label="modifies" arrowhead=vee];
+    Ch -> A [label="invalidates / refreshes" arrowhead=vee style=dashed];
+    Ch -> T [label="triggers re-test" arrowhead=vee style=dashed];
+    B -> B [label="supersedes" arrowhead=vee];
+  }
+
+  // Cross-links for traceability
+  C -> A [label="requires evidence" arrowhead=vee];
+  R -> A [label="evidenced-by" arrowhead=vee style=dotted];
+  R -> T [label="verified-by" arrowhead=vee style=dotted];
+}

@@ -1,0 +1,14 @@
+{
+  "change_id": "D2_tls_policy_change",
+  "description": "TLS policy change for MQTT and OTA",
+  "baseline_from": "<Bi>",
+  "baseline_to": "<Bj>",
+  "changed_assets": [
+    {
+      "path": "mqtt/broker/config/mosquitto.conf"
+    },
+    {
+      "path": "mqtt/broker/tls/tls_policy.json"
+    }
+  ]
+}

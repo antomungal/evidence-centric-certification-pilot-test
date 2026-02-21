@@ -1,0 +1,14 @@
+{
+  "change_id": "D4_device_cert_rotation",
+  "description": "Device client certificate rotation and provisioning update",
+  "baseline_from": "<Bi>",
+  "baseline_to": "<Bj>",
+  "changed_assets": [
+    {
+      "path": "mqtt/device/credentials/provisioning_record.json"
+    },
+    {
+      "path": "mqtt/device/credentials/device_cert_id.txt"
+    }
+  ]
+}

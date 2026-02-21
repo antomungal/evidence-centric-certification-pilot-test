@@ -1,0 +1,14 @@
+{
+  "change_id": "D5_ota_signing_key_rotation",
+  "description": "OTA signing key rotation and verification material update",
+  "baseline_from": "<Bi>",
+  "baseline_to": "<Bj>",
+  "changed_assets": [
+    {
+      "path": "ota/release/ota_signing_pubkey.pem"
+    },
+    {
+      "path": "ota/release/manifest_signed.json"
+    }
+  ]
+}

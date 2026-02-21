@@ -1,0 +1,6 @@
+requirement_id,domain,short_form
+R14,Secure communications (mTLS MQTT),Encrypted and authenticated MQTT communications.
+R15,Secure communications (mTLS MQTT),Broker/server authentication by device.
+R16,Secure communications (mTLS MQTT),Client authentication by broker via mTLS.
+R20,Hardening and governance,Security config versioned and scoped.
+R26,Assurance under change,Targeted reassessment under change.

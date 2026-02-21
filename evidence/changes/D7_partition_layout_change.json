@@ -1,0 +1,11 @@
+{
+  "change_id": "D7_partition_layout_change",
+  "description": "Partition table / OTA slot layout change",
+  "baseline_from": "<Bi>",
+  "baseline_to": "<Bj>",
+  "changed_assets": [
+    {
+      "path": "firmware/config/partition_table.csv"
+    }
+  ]
+}

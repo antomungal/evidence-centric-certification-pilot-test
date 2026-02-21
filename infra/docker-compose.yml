@@ -1,0 +1,29 @@
+version: "3.8"
+
+services:
+  mosquitto:
+    image: eclipse-mosquitto:2
+    container_name: mosquitto-mtls
+    ports:
+      - "8883:8883"
+    volumes:
+      - ./mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
+      - ./mosquitto/aclfile:/mosquitto/config/aclfile:ro
+      - ./certs/ca.crt:/mosquitto/certs/ca_bundle.pem:ro
+      - ./certs/broker.crt:/mosquitto/certs/broker_cert.pem:ro
+      - ./certs/broker.key:/mosquitto/certs/broker_key.pem:ro
+      - ./logs/mosquitto:/mosquitto/log
+    restart: unless-stopped
+
+  ota:
+    image: nginx:alpine
+    container_name: ota-https
+    ports:
+      - "8443:8443"
+    volumes:
+      - ./ota/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./certs/ota_server.crt:/etc/nginx/ota_server.crt:ro
+      - ./certs/ota_server.key:/etc/nginx/ota_server.key:ro
+      - ./ota/artifacts:/srv/ota:ro
+      - ./logs/ota:/var/log/nginx
+    restart: unless-stopped

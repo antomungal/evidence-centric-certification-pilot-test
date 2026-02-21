@@ -1,0 +1,14 @@
+{
+  "change_id": "D3_broker_cert_rotation",
+  "description": "Broker certificate rotation and device trust-store update",
+  "baseline_from": "<Bi>",
+  "baseline_to": "<Bj>",
+  "changed_assets": [
+    {
+      "path": "mqtt/broker/tls/broker_cert.pem"
+    },
+    {
+      "path": "mqtt/device/tls/trust_store_snapshot.pem"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+requirement_id,required_artifact_types
+R14,mqtt_broker_config;test_report_mtls
+R15,broker_ca_bundle;trust_store_snapshot;test_report_mtls
+R16,mqtt_broker_config;provisioning_record;test_report_mtls
+R20,versioned_configs
+R26,change_event_record;impact_A2_package;adjudication_record

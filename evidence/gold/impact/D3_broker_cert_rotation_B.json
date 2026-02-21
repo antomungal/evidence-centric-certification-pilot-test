@@ -1,0 +1,23 @@
+{
+  "change_id": "D3_broker_cert_rotation",
+  "annotator": "B",
+  "baseline_from": "B0",
+  "baseline_to": "B1",
+  "impacted_requirements": [
+    "R14",
+    "R15",
+    "R16",
+    "R20"
+  ],
+  "refresh_paths": [
+    "mqtt/broker/tls/broker_cert.pem",
+    "mqtt/broker/tls/ca_bundle.pem",
+    "mqtt/device/tls/trust_store_snapshot.pem"
+  ],
+  "retest_paths": [
+    "tests/mtls/broker_cert_validation.log",
+    "tests/mtls/mtls_handshake_authorised.log",
+    "tests/acl/topic_acl_allow_deny.log"
+  ],
+  "rationale": "Fill with your rationale."
+}

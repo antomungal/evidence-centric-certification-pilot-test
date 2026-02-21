@@ -1,0 +1,17 @@
+{
+  "baseline_id": "B0",
+  "timestamp_utc": "YYYY-MM-DDThh:mm:ssZ",
+  "toe_ref": "toe/toe_descriptor.json",
+  "scope": {
+    "requirements_profile_ref": "traceability/requirement_profile.csv",
+    "phi_matrix_ref": "traceability/phi_obligation_matrix.csv",
+    "assumptions": [
+      "remote attacker",
+      "no ML runtime"
+    ]
+  },
+  "evidence_items": [],
+  "tests": [],
+  "observations": [],
+  "note": "Replace placeholders with real artefacts, then run scripts/build_manifest.py to populate sha256 fields."
+}

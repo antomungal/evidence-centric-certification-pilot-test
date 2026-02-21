@@ -1,0 +1,14 @@
+{
+  "change_id": "D1_esp_idf_upgrade",
+  "description": "ESP-IDF upgrade affecting TLS/crypto and networking components",
+  "baseline_from": "<Bi>",
+  "baseline_to": "<Bj>",
+  "changed_assets": [
+    {
+      "path": "firmware/build/build_attestation.json"
+    },
+    {
+      "path": "firmware/config/sdkconfig"
+    }
+  ]
+}

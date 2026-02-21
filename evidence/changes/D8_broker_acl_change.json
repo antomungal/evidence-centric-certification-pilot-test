@@ -1,0 +1,14 @@
+{
+  "change_id": "D8_broker_acl_change",
+  "description": "MQTT topic ACL policy change",
+  "baseline_from": "<Bi>",
+  "baseline_to": "<Bj>",
+  "changed_assets": [
+    {
+      "path": "mqtt/broker/config/aclfile"
+    },
+    {
+      "path": "mqtt/broker/authz/topic_acl_mapping.json"
+    }
+  ]
+}

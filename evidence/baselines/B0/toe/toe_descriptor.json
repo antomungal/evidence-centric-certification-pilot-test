@@ -1,0 +1,19 @@
+{
+  "toe_id": "ESP32-PICO-mTLS-MQTT-OTA",
+  "device": {
+    "module": "ESP32-PICO",
+    "firmware_stack": "ESP-IDF (FreeRTOS)"
+  },
+  "mqtt": {
+    "mode": "mTLS",
+    "broker": "Mosquitto (containerised)"
+  },
+  "ota": {
+    "mode": "signed manifest + HTTPS download",
+    "server": "nginx (containerised)"
+  },
+  "assumptions": [
+    "remote attacker",
+    "no ML runtime"
+  ]
+}

@@ -1,0 +1,2 @@
+# Allow device identity (%u from client cert) to use its namespace
+pattern readwrite devices/%u/#
